@@ -1,0 +1,21 @@
+# Node
+node_modules/
+.env
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Build
+build/
+dist/
+
+# Excel u otros datos temporales
+*.xlsx
