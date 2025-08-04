@@ -2,6 +2,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const pool = require("../config/db"); // conexión a la base de datos
 
+require("dotenv").config();
+
 const login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -25,7 +27,7 @@ const login = async (req, res) => {
     // Generar token JWT
     const token = jwt.sign(
       { email: usuario.email, rol: usuario.rol },
-      "secreto_super_seguro", // <-- cámbialo por una clave más segura
+      process.env.JWT_SECRET,
       { expiresIn: "2h" }
     );
 
